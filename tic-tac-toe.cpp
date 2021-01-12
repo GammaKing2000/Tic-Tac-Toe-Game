@@ -11,37 +11,42 @@ int main()
 {
 	char pla1[50], pla2[50];
 	int winner; 
-	
-	cout<<"*********************************************************************************************"<<endl;
-	cout<<"========   ========     ===         ========    ||       ===       ========   ()()   ||==== "<<endl;
-	cout<<"   ||         ||       =   =           ||      |  |     =   =         ||     ()  ()  ||"<<endl;
-	cout<<"   ||         ||      =        ===     ||     |====|   =       ===    ||    ()    () ||=="<<endl;
-	cout<<"   ||         ||       =   =           ||    |      |   =   =         ||     ()  ()  || "<<endl;
-	cout<<"   ||      ========     ===            ||   |        |   ===          ||       ()    ||===="<<endl;		
-	cout<<"*********************************************************************************************"<<endl;
-	cout<<"**maximize window for best experience**\n\n";
-	cout<<"\nEnter player 1's name: ";
-	gets(pla1);
-	cout<<"\nEnter player 2's name: ";
-	gets(pla2);
-	cout<<"\nbelow are the board coordinates:\n";
-	for(int i=0; i<3; i++)
+	char ch='n';
+	do
 	{
-		for(int j=0;j<3; j++)
+		cout<<"*********************************************************************************************"<<endl;
+		cout<<"========   ========     ===         ========    ||       ===       ========   ()()   ||====  "<<endl;
+		cout<<"   ||         ||       =   =           ||      |  |     =   =         ||     ()  ()  ||      "<<endl;
+		cout<<"   ||         ||      =        ===     ||     |====|   =       ===    ||    ()    () ||==    "<<endl;
+		cout<<"   ||         ||       =   =           ||    |      |   =   =         ||     ()  ()  ||      "<<endl;
+		cout<<"   ||      ========     ===            ||   |        |   ===          ||       ()    ||====  "<<endl;
+		cout<<"*********************************************************************************************"<<endl;
+		cout<<"**maximize window for best experience**\n\n";
+		cout<<"\nEnter player 1's name: ";
+		gets(pla1);
+		cout<<"\nEnter player 2's name: ";
+		gets(pla2);
+		cout<<"\nbelow are the board coordinates:\n";
+		for(int i=0; i<3; i++)
 		{
-			cout<<"("<<i<<","<<j<<")  ";
-			mat[i][j]='~';
+			for(int j=0;j<3; j++)
+			{
+				cout<<"("<<i<<","<<j<<")  ";
+				mat[i][j]='~';
+			}
+			cout<<endl;
 		}
-		cout<<endl;
-	}
-	cout<<"\nEnter coordinates like this-> 0 0 or 2 1 (just enter the values with a space between them)\n\n";
-	winner = gameBegin();
-	if(winner==1)
-		cout<<"winner is "<<pla1<<" !!!";
-	else if(winner==2)
-		cout<<"winner is "<<pla2<<" !!!";
-	else
-		cout<<"IT'S A TIE!";
+		cout<<"\nEnter coordinates like this-> 0 0 or 2 1 (just enter the values with a space between them)\n\n";
+		winner = gameBegin();
+		if(winner==1)
+			cout<<"winner is "<<pla1<<" !!!";
+		else if(winner==2)
+			cout<<"winner is "<<pla2<<" !!!";
+		else
+			cout<<"IT'S A TIE!";
+		cout<<"\n\nDo you want to play again?(y/n)";
+		cin>>ch;
+	}while(ch=='y'||ch=='Y')
 	return 0;	
 }
 
