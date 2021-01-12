@@ -31,10 +31,14 @@ int main()
 		{
 			for(int j=0;j<3; j++)
 			{
-				cout<<"("<<i<<","<<j<<")  ";
-				mat[i][j]='~';
+				if(j<2)
+					cout<<" ("<<i<<","<<j<<") |";
+			    else
+			    	cout<<" ("<<i<<","<<j<<")";
+			    mat[i][j]='~';
 			}
-			cout<<endl;
+			if(i<2)
+				cout<<"\n_______|_______|_______\n";
 		}
 		cout<<"\nEnter coordinates like this-> 0 0 or 2 1 (just enter the values with a space between them)\n\n";
 		winner = gameBegin();
@@ -46,7 +50,7 @@ int main()
 			cout<<"IT'S A TIE!";
 		cout<<"\n\nDo you want to play again?(y/n)";
 		cin>>ch;
-	}while(ch=='y'||ch=='Y')
+	}while(ch=='y'||ch=='Y');
 	return 0;	
 }
 
@@ -106,13 +110,18 @@ void display(int x, int y)
 	}
 	cout<<"\n";
 	for(int i=0; i<3; i++)
-	{
-		for(int j=0;j<3; j++)
 		{
-			cout<<mat[i][j]<<"  ";
+			for(int j=0;j<3; j++)
+			{
+				if(j<2)
+					cout<<" "<<mat[i][j]<<" |";
+			    else
+			    	cout<<" "<<mat[i][j];
+			}
+			if(i<2)
+				cout<<"\n___|___|___\n";
 		}
-		cout<<endl;
-	}
+	cout<<"\n   |   |   \n";
 }
 
 int pointCheck()
